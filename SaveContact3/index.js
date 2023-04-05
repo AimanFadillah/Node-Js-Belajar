@@ -31,6 +31,7 @@ yargs.command({
 yargs.command({
     command:"list",
     describe:"Menapilkan Kontak",
+    // list tidak perlu builder kerena tidak ada argumen yang akan dimasukkan
     handler() {
         contacts.listContact()
     }
@@ -71,18 +72,4 @@ yargs.command({
 yargs.parse() // untuk menjalankan yargs
 
 
-
-
-
-// const contact = require("./contact");
-
-// const main = async () => {
-//     let nama =  await contact.tulisPertanyaan("Masukkan Nama :")
-//     let nomor = await contact.tulisPertanyaan("Masukkan Nomor :")
-//     let gmail = await contact.tulisPertanyaan("Masukkan Gmail :")
-
-//     contact.simpanContact(nama,nomor,gmail);
-// }
-
-// main()
 

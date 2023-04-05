@@ -52,7 +52,7 @@ const simpanContact = (nama,nomor,gmail) => {
 
 const listContact = () => {
     let contacts = dataContact();
-    contacts.forEach((contact,i) => {
+    contacts.forEach((contact,i) => { // looping Data
         console.log(`${i + 1}.${contact.nama} {${contact.nomor}}`)
     })
 }
@@ -60,7 +60,7 @@ const listContact = () => {
 const detailContact = (nama) => {
     const contacts = dataContact();
 
-    const contact = contacts.find(contact => contact.nama.toLowerCase() === nama.toLowerCase() );
+    const contact = contacts.find(contact => contact.nama.toLowerCase() === nama.toLowerCase() ); // cari nama yang sama
 
     if(contact){
         console.log(chalk.green.bold(`nama:${contact.nama}`))
@@ -76,16 +76,17 @@ const detailContact = (nama) => {
 }
 
 const removeContact = (nama) => {
-    const contacts = dataContact();
+    const contacts = dataContact(); // data json
 
-    const newContacts = contacts.filter((contact) => contact.nama.toLowerCase() !== nama.toLowerCase() )
+    // jika dihilangkan seperti biasa itu data akan hilang tapi diganti jadi undefined maka yang dibawah diakalin
+    const newContacts = contacts.filter((contact) => contact.nama.toLowerCase() !== nama.toLowerCase() ) // mencari nama yang tidak sama dengan argumen
 
-    if(contacts.length === newContacts.length){
-        console.log(chalk.red.bold("Nama tidak ditemukan"))
+    if(contacts.length === newContacts.length){ // dicek apakah lebar nya sama apa enggak jika sama maka nama tidak ditemukkan
+        console.log(chalk.red.bold("Nama tidak ditemukan")) 
         return false;
     }
     
-    fs.writeFileSync("kontak/kontak.json",JSON.stringify(newContacts));
+    fs.writeFileSync("kontak/kontak.json",JSON.stringify(newContacts)); // ini tidak menghapus hanya mengisi ulang dengan nama yang tidak sama dengan argumen
     console.log(chalk.green.bold(`${nama} berhasil dihapus`))
 
 }
