@@ -35,14 +35,14 @@ const simpanContact = (nama,nomor,gmail) => {
         console.log(chalk.red.bold("Kontak sudah ada coba pake nama lain"))
         return false ;
     }
-    
-    if(!validator.isMobilePhone(nomor,"id-ID")){
+
+    if(!validator.isMobilePhone(nomor,"id-ID")){ // cek NomorHP
         console.log(chalk.red.bold("Nomor tidak valid"))
         return false ;
     }
  
     if(gmail){
-        if(!validator.isEmail(gmail)){
+        if(!validator.isEmail(gmail)){ // cek gmail
             console.log(chalk.red.bold("Email Tidak valid"))
             return false ;
         }

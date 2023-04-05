@@ -8,6 +8,5 @@ const main = async () => {
     contact.simpanContact(nama,nomor,gmail);
 }
 
-
 main()
 

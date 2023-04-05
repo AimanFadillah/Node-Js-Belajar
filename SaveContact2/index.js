@@ -1,17 +1,14 @@
 const yargs = require("yargs");
 const contacts = require("./contact") 
 
-// kirim data lewat argumen 
-// console.log(yargs.argv)
-
 yargs.command({
-    command:"add",
-    describe:"menambahkan kontak baru",
-    builder:{
-        nama:{
-            describe:"Nama Lengkap",
-            demandOption:true,
-            type:"string",
+    command:"add", // Komen Pertaman
+    describe:"menambahkan kontak baru", // Penjelasaan Komen
+    builder:{ // Membuat Argumen
+        nama:{ // nama Argumen
+            describe:"Nama Lengkap", //descripsi argumen
+            demandOption:true, // wajib di isi atau tidak
+            type:"string", // type argumen
         },
         gmail:{
             describe:"Gmail",
@@ -24,12 +21,12 @@ yargs.command({
             type:"string"
         }
     },
-    handler(argv) {
-        contacts.simpanContact(argv.nama,argv.nomor,argv.gmail);
+    handler(argv) { // ketika argumen berhasil di isi 
+        contacts.simpanContact(argv.nama,argv.nomor,argv.gmail); // tindakan
     }
 })
 
-yargs.parse()
+yargs.parse() // untuk menjalankan yargs
 
 
 
