@@ -4,8 +4,8 @@ const app = express();
 const port = 3000;
 
 
-app.set("view engine","ejs")
-app.use(expressLayouts)
+app.set("view engine","ejs") // untuk menggunakan ejs layout
+app.use(expressLayouts) // memasang ejs layout
 
 app.get("/",(request,response) => {
     const siswa = [
@@ -23,7 +23,7 @@ app.get("/",(request,response) => {
         // }
     ]
     response.render('index',{
-        layout:"template/template",
+        layout:"template/template", // menggunakan ejs layout
         nama:"aiman fadillah",
         title:"Beranda",
         siswa,
