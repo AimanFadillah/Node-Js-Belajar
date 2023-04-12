@@ -4,7 +4,9 @@
             <h5 class="card-title"><%= data.nama %></h5>
             <h6 class="card-subtitle mb-2 text-body-secondary"><%= data.nomor %></h6>
             <p><%= data.email %> </p>
-            <a href="/kontak" class="card-link">back</a>
+            <a href="/kontak/delete/<%= data.nama %>" class="badge btn-danger btn mb-3" onclick="return confirm('Yakin?')" >Hapus</a>
+            <a href="/kontak/edit/<%= data.nama %>" class="badge btn-primary btn mb-3" >Edit</a>
+            <a href="/kontak" class="card-link d-block">back</a>
         </div>
     </div>
 <% }else { %>

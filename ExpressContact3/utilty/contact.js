@@ -41,7 +41,20 @@ const add = (contact) => {
     writeData(contacts)
 }
 
+// update
+const updateContacts = (contactBaru) => {
+    const contacts = dataContact();
+    const filterContacts = contacts.filter(contact => contact.nama !== contactBaru.oldNama)
+    delete contactBaru.oldNama;
+    filterContacts.push(contactBaru);
+    writeData(filterContacts);
+}
 
 // delete
+const deleteContact = (nama) => {
+    const contacts = dataContact();
+    const filter = contacts.filter(contact => contact.nama !== nama)
+    writeData(filter)
+}
 
-module.exports = {dataContact,duplikatContact,findContact,add,}
+module.exports = {dataContact,duplikatContact,findContact,add,deleteContact,updateContacts}
