@@ -1,0 +1,14 @@
+<% if(data) { %>
+<div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"><%= data.nama %></h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary"><%= data.nomor %></h6>
+            <p><%= data.email %> </p>
+            <a href="/kontak" class="card-link">back</a>
+        </div>
+    </div>
+<% }else { %>
+    <div class="alert alert-danger" role="alert">
+        Data Tidak temukan <a href="/kontak" class="alert-link">Kembali ke daftar Kontak</a>
+    </div>
+<% } %>
