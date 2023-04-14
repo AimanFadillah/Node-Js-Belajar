@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Daftar Contact</h2>
+            <a href="/kontak/add" class="badge bg-success mb-2 text-decoration-none">Create</a>
+            <% if(msg.length !== 0) { %>
+            <div class="alert alert-success" role="alert">
+                <%= msg %>
+            </div>
+            <% } %>
+            <% if(data.length !== 0) { %>
+            <form>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Cari Nomor" id="cari" name="searching">
+                    <button class="btn btn-dark btn-outline-light"  type="submit" >Cari</button>
+                </div>
+            </form>
+            <table class="table table-dark text-center table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Nomor</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach((dt,i)=> {%>
+                        <tr>
+                            <th>
+                                <%= i + 1 %>
+                            </th>
+                            <td>
+                                <%= dt.nama %>
+                            </td>
+                            <td>
+                                <%= dt.nomor %>
+                            </td>
+                            <td>
+                                <a href="/kontak/<%= dt.nama %>" class="text-decoration-none badge bg-success rounded-pill"><i class="bi bi-info-circle"></i> Detail
+                                </a>
+                            </td>
+                        </tr>
+                        <% }) %>
+            </table>
+            <% } else { %>
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Sorry</h4>
+                    <p>Sepertinya Kamu Belum memiliki kontak</p>
+                    <hr>
+                    <p class="mb-0">Kamu Bisa Menambahkannya dengan menekan tombol create</p>
+                  </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<script>
+    const cari = document.querySelector("#cari")
+
+    const url = new URLSearchParams(window.location.search)
+    const searching = url.get("searching");
+
+    if(searching){
+        cari.value = searching;
+    }
+    
+
+
+</script>

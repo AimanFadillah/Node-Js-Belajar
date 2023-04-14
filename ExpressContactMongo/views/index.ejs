@@ -1,0 +1,17 @@
+<h1>Hello <%= nama %>
+</h1>
+
+<h4>Daftar siswa</h4>
+<ul>
+  <% if(siswa.length> 0) { %>
+    <% for(sis of siswa) { %>
+      <li>Nama :<%= sis.nama %>
+      </li>
+      <li>kelas:<% sis.kelas %>
+      </li>
+      <br>
+      <% } %>
+        <% }else { %>
+          <small>Data Siswa Kosong</small>
+          <% } %>
+</ul>

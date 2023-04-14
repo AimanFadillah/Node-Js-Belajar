@@ -1,0 +1,19 @@
+<% if(data) { %>
+<div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"><%= data.nama %></h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary"><%= data.nomor %></h6>
+            <p><%= data.email %> </p>
+            <form action="/kontak?_method=DELETE" method="post" class="d-inline">
+                <input type="hidden" name="nama" value="<%= data.nama %>">
+                <button type="submit" class="badge btn-danger btn mb-3" onclick="return confirm('Yakin?')" >Hapus</button>
+            </form>
+            <a href="/kontak/edit/<%= data.nama %>" class="badge btn-primary btn mb-3" >Edit</a>
+            <a href="/kontak" class="card-link d-block">back</a>
+        </div>
+    </div>
+<% }else { %>
+    <div class="alert alert-danger" role="alert">
+        Data Tidak temukan <a href="/kontak" class="alert-link">Kembali ke daftar Kontak</a>
+    </div>
+<% } %>

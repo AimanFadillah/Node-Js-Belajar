@@ -5,9 +5,7 @@ const contact = require("./utilty/contact")
 const app = express();
 const port = 3000;
 
-const session = require("express-session")
-const cookieParser = require("cookie-parser")
-const flash = require("connect-flash")
+
 
 app.set("view engine","ejs") // pengaturan view engine diatur ke ejs
 app.use(expressLayouts) // untuk mengatur tata letak tampilan
