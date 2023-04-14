@@ -8,6 +8,7 @@
     "express-ejs-layouts": "^2.5.1",
     "express-session": "^1.17.3",
     "express-validator": "^6.15.0",
+    "mongodb": "^5.2.0",
     "morgan": "^1.10.0"
   }
 }

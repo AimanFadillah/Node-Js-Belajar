@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended:true })); // data form yang disubmit terse
 // konfigurasi flash
 app.use(cookieParser("secret")) // untuk parsing cookie,(secret) untuk menandai dan diperiksa oleh middleware
 app.use(session({ // konfigurasi session 
-    cookie:{maxAge:6000},
+      
     secret:'secret',
     resave:true,
     saveUninitialized:true,
